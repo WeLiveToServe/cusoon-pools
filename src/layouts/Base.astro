@@ -1,0 +1,172 @@
+---
+import "../styles/global.css";
+import { site } from "../data/site";
+
+const {
+  title = "Cusoon Pools | Pool Cleaning & Repair in Exeter, NH",
+  description = "Mobile-first pool cleaning, repairs, and seasonal service in Exeter, NH and nearby towns. Call for fast scheduling and clear water.",
+  canonical = "https://cusoon-pools.com/",
+} = Astro.props;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: site.name,
+  telephone: site.phone,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Exeter",
+    addressRegion: "NH",
+    addressCountry: "US",
+  },
+  areaServed: site.serviceArea,
+  url: "https://cusoon-pools.com/",
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#007ea3" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://imagedelivery.net/CF_ACCOUNT/og-image" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+  </head>
+  <body>
+    <header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-sand">
+      <div class="container flex flex-wrap items-center justify-between gap-4 py-1.5 md:py-2">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/logo.png" alt="Cusoon Pools logo" class="h-8 w-auto sm:h-10" />
+          <div class="hidden sm:block leading-none">
+            <p class="text-xs uppercase tracking-[0.3em] text-sea">Pool Care</p>
+            <p class="font-display text-lg">Cusoon Pools</p>
+            <p class="text-[0.65rem] uppercase tracking-[0.4em] text-ink/70">Make your pool a paradise</p>
+          </div>
+        </a>
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold uppercase tracking-[0.15em]">
+          <a href="/services" class="hover:text-sea transition">Services</a>
+          <a href="/blog" class="hover:text-sea transition">Blog</a>
+          <a href="/testimonials" class="hover:text-sea transition">Testimonials</a>
+          <a href="/gallery" class="hover:text-sea transition">Gallery</a>
+          <a href="/contact" class="hover:text-sea transition">Contact Us</a>
+        </nav>
+        <div class="hidden lg:flex items-center gap-3">
+          <a
+            href={`tel:${site.tel}`}
+            class="rounded-full border border-ink/30 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-sea"
+          >
+            Call {site.phone}
+          </a>
+          <a
+            href="/contact"
+            class="rounded-full border border-ink/30 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-sea"
+          >
+            Get a free quote
+          </a>
+          <a
+            href="/contact"
+            class="rounded-full border border-ink/30 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-sea"
+          >
+            Schedule a service
+          </a>
+        </div>
+        <button
+          class="lg:hidden inline-flex items-center justify-center rounded-full border border-ink/20 p-2"
+          aria-label="Open menu"
+          aria-expanded="false"
+          data-menu-toggle
+        >
+          <span class="block h-0.5 w-6 bg-ink"></span>
+          <span class="my-1.5 block h-0.5 w-6 bg-ink"></span>
+          <span class="block h-0.5 w-6 bg-ink"></span>
+        </button>
+      </div>
+      <div class="lg:hidden flex flex-col gap-2 border-y border-sand bg-white/80 px-0 py-2 text-center uppercase tracking-[0.3em] text-ink/70">
+        <a
+          href={`tel:${site.tel}`}
+          class="rounded-full border border-ink/30 bg-white px-4 py-2 text-[0.65rem] font-semibold tracking-[0.15em] text-ink transition hover:border-sea"
+        >
+          Call {site.phone}
+        </a>
+        <a
+          href="/contact"
+          class="rounded-full border border-ink/30 bg-white px-4 py-2 text-[0.65rem] font-semibold tracking-[0.15em] text-ink transition hover:border-sea"
+        >
+          Get a free quote
+        </a>
+        <a
+          href="/contact"
+          class="rounded-full border border-ink/30 bg-white px-4 py-2 text-[0.65rem] font-semibold tracking-[0.15em] text-ink transition hover:border-sea"
+        >
+          Schedule a service
+        </a>
+      </div>
+      <div class="lg:hidden hidden border-t border-sand bg-white" data-mobile-menu>
+        <div class="container flex flex-col gap-4 py-6 text-sm font-semibold uppercase tracking-[0.2em]">
+          <a href="/services" class="hover:text-sea transition">Services</a>
+          <a href="/blog" class="hover:text-sea transition">Blog</a>
+          <a href="/testimonials" class="hover:text-sea transition">Testimonials</a>
+          <a href="/gallery" class="hover:text-sea transition">Gallery</a>
+          <a href="/contact" class="hover:text-sea transition">Contact Us</a>
+          <a
+            href={`tel:${site.tel}`}
+            class="rounded-full bg-sea px-5 py-2 text-white font-semibold shadow-lift hover:bg-ink transition text-center"
+          >
+            Call {site.phone}
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="border-t border-sand bg-white">
+      <div class="container grid gap-8 py-12 md:grid-cols-[1.1fr_1fr_1fr]">
+        <div>
+          <p class="font-display text-2xl text-gradient">Cusoon Pools</p>
+          <p class="mt-3 text-sm text-ink/70">
+            Pool cleaning, repairs, and seasonal service built for New England weather.
+          </p>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Contact</p>
+          <p class="mt-2 font-semibold">{site.phone}</p>
+          <p class="text-sm text-ink/70">{site.email}</p>
+          <p class="text-sm text-ink/70">{site.location}</p>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Service Hours</p>
+          <p class="mt-2 text-sm text-ink/70">{site.hours}</p>
+          <p class="mt-4 text-xs uppercase tracking-[0.2em] text-ink/60">Service Area</p>
+          <p class="mt-2 text-sm text-ink/70">{site.serviceArea.join(", ")}</p>
+        </div>
+      </div>
+      <div class="border-t border-sand py-4 text-center text-xs text-ink/50">
+        © {new Date().getFullYear()} Cusoon Pools. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector("[data-menu-toggle]");
+      const menu = document.querySelector("[data-mobile-menu]");
+      if (toggle && menu) {
+        toggle.addEventListener("click", () => {
+          const isOpen = menu.classList.toggle("hidden");
+          toggle.setAttribute("aria-expanded", String(!isOpen));
+        });
+      }
+    </script>
+  </body>
+</html>

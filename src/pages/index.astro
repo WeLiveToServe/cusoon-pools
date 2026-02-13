@@ -1,0 +1,261 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+import { services } from "../data/services";
+import { testimonials } from "../data/testimonials";
+import { blogPosts } from "../data/blog";
+---
+<Base>
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="h-full w-full bg-[radial-gradient(circle_at_top,_rgba(96,200,215,0.35),_transparent_55%)]"></div>
+    </div>
+    <div class="container relative grid gap-8 py-4 lg:py-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div class="space-y-6">
+        <p class="text-xs uppercase tracking-[0.4em] text-sea">Pool Cleaning + Repair</p>
+        <h1 class="font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
+          Premium pool care for <span class="text-gradient">Exeter, NH</span> and the Seacoast.
+        </h1>
+        <p class="text-lg text-ink/70">
+          We keep pools clear, safe, and ready for every weekend. From weekly service to urgent repairs,
+          Cusoon Pools delivers precise chemistry, spotless surfaces, and reliable equipment.
+        </p>
+        <div class="flex flex-col gap-4 sm:flex-row">
+          <a
+            href="#contact"
+            class="rounded-full bg-sea px-7 py-3 text-center text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-lift hover:bg-ink transition"
+          >
+            Schedule Service
+          </a>
+          <a
+            href={`tel:${site.tel}`}
+            class="rounded-full border border-ink/20 px-7 py-3 text-center text-sm font-semibold uppercase tracking-[0.2em] text-ink hover:border-sea hover:text-sea transition"
+          >
+            Call {site.phone}
+          </a>
+        </div>
+        <div class="grid gap-4 pt-6 sm:grid-cols-3">
+          <div class="rounded-2xl border border-sand bg-white/80 p-4 shadow-lift">
+            <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Response</p>
+            <p class="mt-2 font-semibold">Same-week bookings</p>
+          </div>
+          <div class="rounded-2xl border border-sand bg-white/80 p-4 shadow-lift">
+            <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Chemistry</p>
+            <p class="mt-2 font-semibold">Balanced every visit</p>
+          </div>
+          <div class="rounded-2xl border border-sand bg-white/80 p-4 shadow-lift">
+            <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Trusted</p>
+            <p class="mt-2 font-semibold">Local Seacoast team</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-6 rounded-[32px] bg-[conic-gradient(from_90deg_at_50%_50%,_rgba(0,126,163,0.3),_rgba(96,200,215,0.2),_rgba(255,186,73,0.25),_rgba(0,126,163,0.3))] blur-2xl"></div>
+        <div class="relative overflow-hidden rounded-[28px] border border-white/70 bg-white/70 shadow-lift">
+          <img src={site.heroImage} alt="Clean backyard pool with clear water" class="h-full w-full object-cover" />
+        </div>
+        <div class="absolute -bottom-6 left-6 rounded-2xl bg-white px-5 py-3 shadow-lift">
+          <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Service Area</p>
+          <p class="font-semibold">{site.serviceArea.slice(0, 4).join(", ")}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-16">
+    <div class="container">
+      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="text-xs uppercase tracking-[0.4em] text-sea">Services</p>
+          <h2 class="font-display text-3xl sm:text-4xl">Everything your pool needs, handled in one visit.</h2>
+        </div>
+        <a href="#contact" class="text-sm font-semibold uppercase tracking-[0.2em] text-sea">
+          Get a custom plan →
+        </a>
+      </div>
+      <div class="mt-10 grid gap-6 lg:grid-cols-3">
+        {services.map((service) => (
+          <article class="rounded-3xl border border-sand bg-white p-6 shadow-lift">
+            <h3 class="font-display text-2xl">{service.title}</h3>
+            <p class="mt-3 text-ink/70">{service.description}</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              {service.highlights.map((highlight) => (
+                <li>• {highlight}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <div class="rounded-[32px] border border-sand bg-sand/60 p-8">
+        <p class="text-xs uppercase tracking-[0.4em] text-sea">Why Cusoon</p>
+        <h2 class="mt-4 font-display text-3xl">Precision chemistry. Pro-level repairs. Zero guesswork.</h2>
+        <p class="mt-4 text-ink/70">
+          We track every pool visit, log readings, and tailor treatments to New England weather.
+          You get consistent water clarity and equipment that lasts longer.
+        </p>
+        <div class="mt-6 space-y-4 text-sm text-ink/70">
+          <p>• Detailed service reports after each visit.</p>
+          <p>• Transparent pricing before any repair work.</p>
+          <p>• Locally focused on Exeter and the Seacoast.</p>
+        </div>
+      </div>
+      <div class="grid gap-6">
+        <div class="rounded-3xl border border-sand bg-white p-6 shadow-lift">
+          <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Full Service</p>
+          <p class="mt-3 text-lg font-semibold">Weekly cleaning, chemical balance, and equipment monitoring.</p>
+        </div>
+        <div class="rounded-3xl border border-sand bg-white p-6 shadow-lift">
+          <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Repair Ready</p>
+          <p class="mt-3 text-lg font-semibold">Same-week diagnostics for heaters, pumps, filters, and leaks.</p>
+        </div>
+        <div class="rounded-3xl border border-sand bg-white p-6 shadow-lift">
+          <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Seasonal Care</p>
+          <p class="mt-3 text-lg font-semibold">Openings, closings, and winterization handled by pros.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="py-16">
+    <div class="container">
+      <p class="text-xs uppercase tracking-[0.4em] text-sea">Testimonials</p>
+      <h2 class="mt-3 font-display text-3xl sm:text-4xl">Homeowners who love their water again.</h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        {testimonials.map((testimonial) => (
+          <article class="rounded-3xl border border-sand bg-white p-6 shadow-lift">
+            <p class="text-ink/80">“{testimonial.quote}”</p>
+            <p class="mt-4 text-sm font-semibold">{testimonial.name}</p>
+            <p class="text-xs uppercase tracking-[0.2em] text-ink/50">{testimonial.location}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="py-16 bg-white">
+    <div class="container">
+      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="text-xs uppercase tracking-[0.4em] text-sea">Gallery</p>
+          <h2 class="font-display text-3xl sm:text-4xl">Before and afters that speak for themselves.</h2>
+        </div>
+        <a href="#contact" class="text-sm font-semibold uppercase tracking-[0.2em] text-sea">
+          Book a walkthrough →
+        </a>
+      </div>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {Array.from({ length: 6 }).map((_, index) => (
+          <div class="group relative overflow-hidden rounded-3xl border border-sand shadow-lift">
+            <img
+              src={`https://imagedelivery.net/CF_ACCOUNT/gallery-${index + 1}`}
+              alt="Pool service project"
+              class="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <div>
+        <p class="text-xs uppercase tracking-[0.4em] text-sea">Resource Center</p>
+        <h2 class="mt-3 font-display text-3xl sm:text-4xl">Pool care tips written for Seacoast owners.</h2>
+        <p class="mt-4 text-ink/70">
+          Weekly maintenance, equipment tips, and clear water strategies. Read the latest from our team.
+        </p>
+        <a href="/blog" class="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.2em] text-sea">
+          See all posts →
+        </a>
+      </div>
+      <div class="grid gap-5">
+        {blogPosts.slice(0, 3).map((post) => (
+          <article class="rounded-3xl border border-sand bg-white p-6 shadow-lift">
+            <p class="text-xs uppercase tracking-[0.2em] text-ink/50">{post.date}</p>
+            <h3 class="mt-2 font-display text-2xl">{post.title}</h3>
+            <p class="mt-3 text-ink/70">{post.excerpt}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-16 bg-ink text-white">
+    <div class="container grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+      <div>
+        <p class="text-xs uppercase tracking-[0.4em] text-aqua">Contact Us</p>
+        <h2 class="mt-3 font-display text-3xl sm:text-4xl">Tell us about your pool and we will handle the rest.</h2>
+        <p class="mt-4 text-white/70">
+          Fast estimates, clear timelines, and a service plan built around your schedule.
+          We are based in Exeter, NH and serve the Seacoast.
+        </p>
+        <div class="mt-6 space-y-2 text-sm">
+          <p>
+            <span class="text-white/60">Phone:</span> {site.phone}
+          </p>
+          <p>
+            <span class="text-white/60">Email:</span> {site.email}
+          </p>
+          <p>
+            <span class="text-white/60">Hours:</span> {site.hours}
+          </p>
+        </div>
+      </div>
+      <form class="rounded-3xl bg-white/10 p-6 backdrop-blur">
+        <div class="grid gap-4 sm:grid-cols-2">
+          <label class="text-sm">
+            Full Name
+            <input
+              type="text"
+              name="name"
+              placeholder="Your name"
+              class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50"
+            />
+          </label>
+          <label class="text-sm">
+            Phone
+            <input
+              type="tel"
+              name="phone"
+              placeholder="(603) 555-0000"
+              class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50"
+            />
+          </label>
+        </div>
+        <label class="mt-4 block text-sm">
+          Email
+          <input
+            type="email"
+            name="email"
+            placeholder="you@email.com"
+            class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50"
+          />
+        </label>
+        <label class="mt-4 block text-sm">
+          How can we help?
+          <textarea
+            name="message"
+            rows={4}
+            placeholder="Weekly cleaning, repair, opening, or other details."
+            class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50"
+          ></textarea>
+        </label>
+        <button
+          type="submit"
+          class="mt-6 w-full rounded-full bg-sun px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-ink transition hover:bg-aqua"
+        >
+          Request a Quote
+        </button>
+        <p class="mt-3 text-xs text-white/60">
+          This form is a placeholder. Connect it to Formspree, Web3Forms, or your CRM.
+        </p>
+      </form>
+    </div>
+  </section>
+</Base>

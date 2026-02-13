@@ -1,0 +1,31 @@
+---
+import Base from "../../layouts/Base.astro";
+import { blogPosts } from "../../data/blog";
+---
+<Base
+  title="Pool Care Blog | Cusoon Pools"
+  description="Pool care tips, maintenance checklists, and repair insights for Exeter, NH pool owners."
+  canonical="https://cusoon-pools.com/blog/"
+>
+  <section class="py-16">
+    <div class="container">
+      <p class="text-xs uppercase tracking-[0.4em] text-sea">Blog</p>
+      <h1 class="mt-3 font-display text-4xl sm:text-5xl">Pool care insights from the Cusoon team.</h1>
+      <p class="mt-4 max-w-2xl text-lg text-ink/70">
+        Maintenance tips, seasonal guides, and equipment advice designed for pools in Exeter and the Seacoast.
+      </p>
+      <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {blogPosts.map((post) => (
+          <article class="rounded-3xl border border-sand bg-white p-6 shadow-lift">
+            <p class="text-xs uppercase tracking-[0.2em] text-ink/50">{post.date}</p>
+            <h2 class="mt-2 font-display text-2xl">{post.title}</h2>
+            <p class="mt-3 text-ink/70">{post.excerpt}</p>
+            <p class="mt-4 text-sm font-semibold uppercase tracking-[0.2em] text-sea">
+              Coming soon
+            </p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

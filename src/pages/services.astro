@@ -1,0 +1,33 @@
+---
+import Base from "../layouts/Base.astro";
+import { services } from "../data/services";
+---
+<Base
+  title="Services | Cusoon Pools"
+  description="Detailed service options for cleaning, repair, and seasonal care from Cusoon Pools."
+  canonical="https://cusoon-pools.com/services/"
+>
+  <section class="py-16">
+    <div class="container">
+      <p class="text-xs uppercase tracking-[0.4em] text-sea">Services</p>
+      <h1 class="mt-3 font-display text-4xl sm:text-5xl">Tailored pool care for Exeter and the Seacoast.</h1>
+      <p class="mt-4 max-w-2xl text-lg text-ink/70">
+        Weekly cleanings, repairs, openings, closings, and emergency attention delivered by our local team.
+        Choose the plan that matches your pool’s needs and schedule.
+      </p>
+      <div class="mt-12 grid gap-6 lg:grid-cols-3">
+        {services.map((service) => (
+          <article class="rounded-3xl border border-sand bg-white p-6 shadow-lift">
+            <h2 class="font-display text-2xl">{service.title}</h2>
+            <p class="mt-3 text-ink/70">{service.description}</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink/70">
+              {service.highlights.map((highlight) => (
+                <li>• {highlight}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

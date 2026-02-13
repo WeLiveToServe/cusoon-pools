@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cusoon-pools.com/sitemap.xml

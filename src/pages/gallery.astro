@@ -1,0 +1,32 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+---
+<Base
+  title="Gallery | Cusoon Pools"
+  description="Before-and-after gallery from Cusoon Pools' cleaning, repair, and seasonal service jobs."
+  canonical="https://cusoon-pools.com/gallery/"
+>
+  <section class="py-16">
+    <div class="container">
+      <p class="text-xs uppercase tracking-[0.4em] text-sea">Gallery</p>
+      <h1 class="mt-3 font-display text-4xl sm:text-5xl">Visual proof of why pools stay clear.</h1>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {Array.from({ length: 6 }).map((_, index) => (
+          <div class="group relative overflow-hidden rounded-3xl border border-sand shadow-lift">
+            <img
+              src={`https://imagedelivery.net/CF_ACCOUNT/gallery-${index + 1}`}
+              alt={`Cusoon Pools project ${index + 1}`}
+              class="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+      <p class="mt-10 text-sm text-ink/70">
+        Every image above is shot after service to highlight the difference our team makes for pools in
+        {site.serviceArea.join(", ")}.
+      </p>
+    </div>
+  </section>
+</Base>
