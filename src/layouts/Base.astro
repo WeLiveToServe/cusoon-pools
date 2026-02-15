@@ -44,9 +44,12 @@ const jsonLd = {
   </head>
   <body>
     <header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-sand">
-      <div class="container flex flex-wrap items-center justify-between gap-4 py-1.5 md:py-2">
-        <a href="/" class="flex items-center gap-3">
-          <img src="/logo.png" alt="Cusoon Pools logo" class="h-8 w-auto sm:h-10" />
+      <div class="container relative flex items-center justify-center py-1.5 md:py-2 lg:flex-wrap lg:items-center lg:justify-between lg:gap-4">
+        <a href="/" class="mx-auto flex items-center gap-3 lg:mx-0">
+          <picture>
+            <source media="(max-width: 639px)" srcset="/logo-mobile.png" />
+            <img src="/logo-source.png" alt="Cusoon Pools logo" class="h-8 w-auto sm:h-10" />
+          </picture>
           <div class="hidden sm:block leading-none">
             <p class="text-xs uppercase tracking-[0.3em] text-sea">Pool Care</p>
             <p class="font-display text-lg">Cusoon Pools</p>
@@ -81,7 +84,7 @@ const jsonLd = {
           </a>
         </div>
         <button
-          class="lg:hidden inline-flex items-center justify-center rounded-full border border-ink/20 p-2"
+          class="lg:hidden absolute right-0 inline-flex items-center justify-center rounded-full border border-ink/20 p-2"
           aria-label="Open menu"
           aria-expanded="false"
           data-menu-toggle
@@ -91,24 +94,18 @@ const jsonLd = {
           <span class="block h-0.5 w-6 bg-ink"></span>
         </button>
       </div>
-      <div class="lg:hidden flex flex-col gap-2 border-y border-sand bg-white/80 px-0 py-2 text-center uppercase tracking-[0.3em] text-ink/70">
+      <div class="lg:hidden flex items-center justify-center gap-2 border-y border-sand bg-white/80 px-2 py-2 text-center uppercase tracking-[0.3em] text-ink/70">
         <a
           href={`tel:${site.tel}`}
-          class="rounded-full border border-ink/30 bg-white px-4 py-2 text-[0.65rem] font-semibold tracking-[0.15em] text-ink transition hover:border-sea"
+          class="whitespace-nowrap rounded-full border border-ink/30 bg-white px-4 py-2 text-[0.65rem] font-semibold tracking-[0.15em] text-ink transition hover:border-sea"
         >
           Call {site.phone}
         </a>
         <a
           href="/contact"
-          class="rounded-full border border-ink/30 bg-white px-4 py-2 text-[0.65rem] font-semibold tracking-[0.15em] text-ink transition hover:border-sea"
+          class="whitespace-nowrap rounded-full border border-ink/30 bg-white px-4 py-2 text-[0.65rem] font-semibold tracking-[0.15em] text-ink transition hover:border-sea"
         >
           Get a free quote
-        </a>
-        <a
-          href="/contact"
-          class="rounded-full border border-ink/30 bg-white px-4 py-2 text-[0.65rem] font-semibold tracking-[0.15em] text-ink transition hover:border-sea"
-        >
-          Schedule a service
         </a>
       </div>
       <div class="lg:hidden hidden border-t border-sand bg-white" data-mobile-menu>

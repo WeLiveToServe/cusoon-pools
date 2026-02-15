@@ -5,6 +5,13 @@ export const site = {
   location: "Exeter, NH",
   email: "hello@cusoon-pools.com",
   heroImage: "https://imagedelivery.net/CF_ACCOUNT/hero-pool",
+  galleryImages: [
+    "https://cusoon-aws.s3.us-east-2.amazonaws.com/grey-house-in-background.jpg",
+    "https://cusoon-aws.s3.us-east-2.amazonaws.com/kennebunk-vanishing-edge.jpg",
+    "https://cusoon-aws.s3.us-east-2.amazonaws.com/kidney-small-woods.png",
+    "https://cusoon-aws.s3.us-east-2.amazonaws.com/premium-pool-pool-house-back+ground.jpg",
+    "https://cusoon-aws.s3.us-east-2.amazonaws.com/white_plaster_pool_shelf.jpg",
+  ],
   serviceArea: [
     "Exeter",
     "Stratham",

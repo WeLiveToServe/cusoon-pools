@@ -2,25 +2,21 @@ export const testimonials = [
   {
     name: "Megan L.",
     location: "Exeter, NH",
-    quote:
-      "Cusoon Pools brought our water back to life in one visit. Clear, balanced, and the tech explained everything.",
+    quote: "Water went from cloudy to crystal in one visit. Fast, clean, and zero hassle.",
   },
   {
     name: "Jason R.",
     location: "Stratham, NH",
-    quote:
-      "We had a heater issue and they handled it fast. Honest pricing and a system check that caught another problem.",
+    quote: "Heater failed on Friday, fixed by Monday. Clear pricing and no upsell games.",
   },
   {
     name: "Priya K.",
     location: "Newmarket, NH",
-    quote:
-      "Weekly cleaning has been spotless all season. No green surprises, and they always send a report after each visit.",
+    quote: "Weekly service has been flawless. No algae surprises and updates after every visit.",
   },
   {
     name: "Daniel S.",
     location: "Hampton, NH",
-    quote:
-      "Professional, on-time, and super knowledgeable. They fixed our pump and optimized our run times.",
+    quote: "On time, sharp techs, and our pump now runs quieter with lower energy use.",
   },
 ];
