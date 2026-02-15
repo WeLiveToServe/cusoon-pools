@@ -1,0 +1,98 @@
+---
+import Base from "../../layouts/Base.astro";
+import { site } from "../../data/site";
+import { blogPosts, type BlogPost } from "../../data/blog";
+import { formatLongDate } from "../../lib/dates";
+
+export function getStaticPaths() {
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as { post: BlogPost };
+
+const allText = post.sections
+  .flatMap((section) => [section.title, ...section.paragraphs, ...(section.bullets ?? [])])
+  .join(" ");
+const words = allText.trim().split(/\s+/).filter(Boolean).length;
+const readingMinutes = Math.max(2, Math.round(words / 220));
+---
+
+<Base
+  title={`${post.title} | Cusoon Pools`}
+  description={post.excerpt}
+  canonical={`https://cusoon-pools.com/blog/${post.slug}/`}
+>
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="h-full w-full bg-[radial-gradient(circle_at_top,_rgba(96,200,215,0.35),_transparent_55%)]"></div>
+    </div>
+    <div class="container relative grid gap-8 py-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div class="space-y-6">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-sea hover:text-ink transition"
+        >
+          <span aria-hidden="true">&larr;</span>
+          Back to blog
+        </a>
+        <p class="text-xs uppercase tracking-[0.4em] text-ink/60">Pool Care Blog</p>
+        <h1 class="font-display text-4xl leading-tight sm:text-5xl">{post.title}</h1>
+        <p class="max-w-2xl text-lg text-ink/70">{post.excerpt}</p>
+        <div class="flex flex-wrap gap-3 text-xs uppercase tracking-[0.2em] text-ink/60">
+          <span class="rounded-full border border-sand bg-white/80 px-4 py-2 shadow-lift">{formatLongDate(post.date)}</span>
+          <span class="rounded-full border border-sand bg-white/80 px-4 py-2 shadow-lift">{readingMinutes} min read</span>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-6 rounded-[32px] bg-[conic-gradient(from_90deg_at_50%_50%,_rgba(0,126,163,0.3),_rgba(96,200,215,0.2),_rgba(255,186,73,0.25),_rgba(0,126,163,0.3))] blur-2xl"></div>
+        <div class="relative overflow-hidden rounded-[28px] border border-white/70 bg-white/70 shadow-lift">
+          <img src={site.heroImage} alt="Clean backyard pool with clear water" class="h-full w-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container">
+      <article class="mx-auto max-w-3xl rounded-[32px] border border-sand bg-white p-8 shadow-lift sm:p-10">
+        {post.sections.map((section, index) => (
+          <section class={index === 0 ? "" : "mt-10"}>
+            <h2 class="font-display text-2xl sm:text-3xl">{section.title}</h2>
+            <div class="mt-4 space-y-4 text-ink/80 leading-relaxed">
+              {section.paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+            {section.bullets?.length ? (
+              <ul class="mt-5 space-y-2 text-ink/75">
+                {section.bullets.map((bullet) => (
+                  <li class="flex gap-3">
+                    <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-sea"></span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </section>
+        ))}
+        <div class="mt-12 rounded-3xl border border-sand bg-sand/40 p-6">
+          <p class="text-xs uppercase tracking-[0.3em] text-ink/60">Need help</p>
+          <p class="mt-2 text-base text-ink/80">
+            Want a pro to handle water balance, troubleshooting, or seasonal service? Call{" "}
+            <a href={`tel:${site.tel}`} class="font-semibold text-sea hover:text-ink transition">
+              {site.phone}
+            </a>{" "}
+            or{" "}
+            <a href="/contact" class="font-semibold text-sea hover:text-ink transition">
+              request a quote
+            </a>
+            .
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+</Base>

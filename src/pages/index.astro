@@ -4,6 +4,9 @@ import { site } from "../data/site";
 import { services } from "../data/services";
 import { testimonials } from "../data/testimonials";
 import { blogPosts } from "../data/blog";
+import { compareIsoDateDesc, formatLongDate } from "../lib/dates";
+
+const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.date)).slice(0, 3);
 ---
 <Base>
   <section class="relative overflow-hidden">
@@ -70,7 +73,7 @@ import { blogPosts } from "../data/blog";
           <h2 class="font-display text-3xl sm:text-4xl">Everything your pool needs, handled in one visit.</h2>
         </div>
         <a href="#contact" class="text-sm font-semibold uppercase tracking-[0.2em] text-sea">
-          Get a custom plan â†’
+          Get a custom plan &rarr;
         </a>
       </div>
       <div class="mt-10 grid gap-6 lg:grid-cols-3">
@@ -80,7 +83,7 @@ import { blogPosts } from "../data/blog";
             <p class="mt-3 text-ink/70">{service.description}</p>
             <ul class="mt-5 space-y-2 text-sm text-ink/70">
               {service.highlights.map((highlight) => (
-                <li>â€¢ {highlight}</li>
+                <li>&bull; {highlight}</li>
               ))}
             </ul>
           </article>
@@ -99,9 +102,9 @@ import { blogPosts } from "../data/blog";
           You get consistent water clarity and equipment that lasts longer.
         </p>
         <div class="mt-6 space-y-4 text-sm text-ink/70">
-          <p>â€¢ Detailed service reports after each visit.</p>
-          <p>â€¢ Transparent pricing before any repair work.</p>
-          <p>â€¢ Locally focused on Exeter and the Seacoast.</p>
+          <p>&bull; Detailed service reports after each visit.</p>
+          <p>&bull; Transparent pricing before any repair work.</p>
+          <p>&bull; Locally focused on Exeter and the Seacoast.</p>
         </div>
       </div>
       <div class="grid gap-6">
@@ -153,7 +156,7 @@ import { blogPosts } from "../data/blog";
           <h2 class="font-display text-3xl sm:text-4xl">Before and afters that speak for themselves.</h2>
         </div>
         <a href="#contact" class="text-sm font-semibold uppercase tracking-[0.2em] text-sea">
-          Book a walkthrough â†’
+          Book a walkthrough &rarr;
         </a>
       </div>
       <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -179,14 +182,18 @@ import { blogPosts } from "../data/blog";
           Weekly maintenance, equipment tips, and clear water strategies. Read the latest from our team.
         </p>
         <a href="/blog" class="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.2em] text-sea">
-          See all posts â†’
+          See all posts &rarr;
         </a>
       </div>
       <div class="grid gap-5">
-        {blogPosts.slice(0, 3).map((post) => (
+        {latestPosts.map((post) => (
           <article class="rounded-3xl border border-sand bg-white p-6 shadow-lift">
-            <p class="text-xs uppercase tracking-[0.2em] text-ink/50">{post.date}</p>
-            <h3 class="mt-2 font-display text-2xl">{post.title}</h3>
+            <p class="text-xs uppercase tracking-[0.2em] text-ink/50">{formatLongDate(post.date)}</p>
+            <h3 class="mt-2 font-display text-2xl">
+              <a href={`/blog/${post.slug}`} class="hover:text-sea transition">
+                {post.title}
+              </a>
+            </h3>
             <p class="mt-3 text-ink/70">{post.excerpt}</p>
           </article>
         ))}

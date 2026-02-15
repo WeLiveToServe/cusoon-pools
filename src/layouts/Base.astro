@@ -44,47 +44,23 @@ const jsonLd = {
   </head>
   <body>
     <header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-sand">
-      <div class="container relative flex items-center justify-center py-1.5 md:py-2 lg:flex-wrap lg:items-center lg:justify-between lg:gap-4">
-        <a href="/" class="mx-auto flex items-center gap-3 lg:mx-0">
+      <div class="container relative flex items-center gap-4 py-2">
+        <a href="/" class="flex items-center">
           <picture>
             <source media="(max-width: 639px)" srcset="/logo-mobile.png" />
-            <img src="/logo-source.png" alt="Cusoon Pools logo" class="h-8 w-auto sm:h-10" />
+            <img src="/logo-source.png" alt="Cusoon Pools logo" class="h-10 w-auto sm:h-12 lg:h-20" />
           </picture>
-          <div class="hidden sm:block leading-none">
-            <p class="text-xs uppercase tracking-[0.3em] text-sea">Pool Care</p>
-            <p class="font-display text-lg">Cusoon Pools</p>
-            <p class="text-[0.65rem] uppercase tracking-[0.4em] text-ink/70">Make your pool a paradise</p>
-          </div>
         </a>
         <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold uppercase tracking-[0.15em]">
-          <a href="/services" class="hover:text-sea transition">Services</a>
-          <a href="/blog" class="hover:text-sea transition">Blog</a>
-          <a href="/testimonials" class="hover:text-sea transition">Testimonials</a>
-          <a href="/gallery" class="hover:text-sea transition">Gallery</a>
-          <a href="/contact" class="hover:text-sea transition">Contact Us</a>
+          <a href="/services" class="hover:text-sea">Services</a>
+          <a href="/blog" class="hover:text-sea">Blog</a>
+          <a href="/testimonials" class="hover:text-sea">Testimonials</a>
+          <a href="/gallery" class="hover:text-sea">Gallery</a>
+          <a href="/contact" class="hover:text-sea">Contact Us</a>
         </nav>
-        <div class="hidden lg:flex items-center gap-3">
-          <a
-            href={`tel:${site.tel}`}
-            class="rounded-full border border-ink/30 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-sea"
-          >
-            Call {site.phone}
-          </a>
-          <a
-            href="/contact"
-            class="rounded-full border border-ink/30 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-sea"
-          >
-            Get a free quote
-          </a>
-          <a
-            href="/contact"
-            class="rounded-full border border-ink/30 bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-ink transition hover:border-sea"
-          >
-            Schedule a service
-          </a>
-        </div>
+
         <button
-          class="lg:hidden absolute right-0 inline-flex items-center justify-center rounded-full border border-ink/20 p-2"
+          class="lg:hidden ml-auto inline-flex items-center justify-center rounded-full border border-ink/20 p-2 bg-white/70 backdrop-blur"
           aria-label="Open menu"
           aria-expanded="false"
           data-menu-toggle
@@ -93,33 +69,65 @@ const jsonLd = {
           <span class="my-1.5 block h-0.5 w-6 bg-ink"></span>
           <span class="block h-0.5 w-6 bg-ink"></span>
         </button>
-      </div>
-      <div class="lg:hidden flex items-center justify-center gap-2 border-y border-sand bg-white/80 px-2 py-2 text-center uppercase tracking-[0.3em] text-ink/70">
-        <a
-          href={`tel:${site.tel}`}
-          class="whitespace-nowrap rounded-full border border-ink/30 bg-white px-4 py-2 text-[0.65rem] font-semibold tracking-[0.15em] text-ink transition hover:border-sea"
+
+        <div
+          class="lg:hidden hidden absolute right-5 top-full mt-3 w-[min(18rem,calc(100vw-2.5rem))] overflow-hidden rounded-2xl border border-sand bg-white shadow-lift"
+          data-mobile-menu
         >
-          Call {site.phone}
-        </a>
-        <a
-          href="/contact"
-          class="whitespace-nowrap rounded-full border border-ink/30 bg-white px-4 py-2 text-[0.65rem] font-semibold tracking-[0.15em] text-ink transition hover:border-sea"
-        >
-          Get a free quote
-        </a>
+          <div class="flex flex-col p-3 text-sm font-semibold uppercase tracking-[0.18em]">
+            <a href="/services" class="rounded-xl px-4 py-3 hover:bg-sand/50">Services</a>
+            <a href="/blog" class="rounded-xl px-4 py-3 hover:bg-sand/50">Blog</a>
+            <a href="/testimonials" class="rounded-xl px-4 py-3 hover:bg-sand/50">Testimonials</a>
+            <a href="/gallery" class="rounded-xl px-4 py-3 hover:bg-sand/50">Gallery</a>
+            <a href="/contact" class="rounded-xl px-4 py-3 hover:bg-sand/50">Contact Us</a>
+          </div>
+        </div>
       </div>
-      <div class="lg:hidden hidden border-t border-sand bg-white" data-mobile-menu>
-        <div class="container flex flex-col gap-4 py-6 text-sm font-semibold uppercase tracking-[0.2em]">
-          <a href="/services" class="hover:text-sea transition">Services</a>
-          <a href="/blog" class="hover:text-sea transition">Blog</a>
-          <a href="/testimonials" class="hover:text-sea transition">Testimonials</a>
-          <a href="/gallery" class="hover:text-sea transition">Gallery</a>
-          <a href="/contact" class="hover:text-sea transition">Contact Us</a>
+
+      <div class="hidden lg:block border-t border-sand bg-white/75">
+        <div class="container flex items-center justify-center gap-3 py-3">
           <a
             href={`tel:${site.tel}`}
-            class="rounded-full bg-sea px-5 py-2 text-white font-semibold shadow-lift hover:bg-ink transition text-center"
+            class="inline-flex items-center gap-2 rounded-full border border-sea/25 bg-aqua/25 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-ink shadow-lift hover:bg-aqua/40 hover:border-sea/40 transition"
           >
-            Call {site.phone}
+            <span aria-hidden="true">☎</span>
+            <span>Call</span>
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex items-center gap-2 rounded-full border border-sea/25 bg-aqua/25 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-ink shadow-lift hover:bg-aqua/40 hover:border-sea/40 transition"
+          >
+            <span>Free Quote</span>
+          </a>
+          <a
+            href={`mailto:${site.email}`}
+            class="inline-flex items-center gap-2 rounded-full border border-sea/25 bg-aqua/25 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-ink shadow-lift hover:bg-aqua/40 hover:border-sea/40 transition"
+          >
+            <span>Email Us</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:hidden border-t border-sand bg-white/80">
+        <div class="container flex items-center justify-center gap-2 py-2">
+          <a
+            href={`tel:${site.tel}`}
+            class="inline-flex items-center gap-2 rounded-full border border-sea/25 bg-aqua/25 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-ink shadow-lift hover:bg-aqua/40 hover:border-sea/40 transition"
+          >
+            <span aria-hidden="true">☎</span>
+            <span>Call</span>
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex items-center gap-2 rounded-full border border-sea/25 bg-aqua/25 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-ink shadow-lift hover:bg-aqua/40 hover:border-sea/40 transition"
+          >
+            <span>Free Quote</span>
+          </a>
+          <a
+            href={`mailto:${site.email}`}
+            class="inline-flex items-center gap-2 rounded-full border border-sea/25 bg-aqua/25 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-ink shadow-lift hover:bg-aqua/40 hover:border-sea/40 transition"
+          >
+            <span>Email Us</span>
           </a>
         </div>
       </div>
@@ -159,9 +167,30 @@ const jsonLd = {
       const toggle = document.querySelector("[data-menu-toggle]");
       const menu = document.querySelector("[data-mobile-menu]");
       if (toggle && menu) {
+        const closeMenu = () => {
+          menu.classList.add("hidden");
+          toggle.setAttribute("aria-expanded", "false");
+        };
+
         toggle.addEventListener("click", () => {
-          const isOpen = menu.classList.toggle("hidden");
-          toggle.setAttribute("aria-expanded", String(!isOpen));
+          const willOpen = menu.classList.contains("hidden");
+          if (willOpen) {
+            menu.classList.remove("hidden");
+            toggle.setAttribute("aria-expanded", "true");
+          } else {
+            closeMenu();
+          }
+        });
+
+        document.addEventListener("click", (event) => {
+          const target = event.target;
+          if (!(target instanceof Node)) return;
+          if (toggle.contains(target) || menu.contains(target)) return;
+          closeMenu();
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") closeMenu();
         });
       }
     </script>
