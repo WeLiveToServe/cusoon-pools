@@ -1,8 +1,7 @@
-1- neither the desktop or mobile site has a logo on the deployed cloudflare site
-2- the triple horizontal lines on the mobile page do not show so it is not obvious that it is an option
-3- remove the "call 603-575-9800" and "schedule service" call to actions that are NOT in the hero bar
-at the top. these are now redundant
-4- remove the "get a custom plan ->" text and link from the "services" section
-5- remove "service area" copy from everywhere on the site.
-6- Change "Premium pool care for EXETER, NH and the Seacoast." to "Friendly, professional pool and spa services for the Greater New England Seacost. We see what big companies miss and always go the extra mile."
-7- Add a "Customer Login" menu item to the hamburger menu as a place holder to the hero hamburger menu. 
+1- the logos are still not showing, please confirm the logo image names match up to the codebase and suggest a few reasons why this is happening?
+2- Reduce the font size of of "Friendly, professional pool...." at the top of the body of the page. Choose the font size so it takes up no more than 4 lines. you may reduce the left and right margins by 50% each.
+3-see screen shot, "schedule service" and "call 603..." are still visible. REMOVE those items entirely.
+4- make the testimonials a 2 column by 4 row grid. use square boxes. write 4 more testimonials. use the following towns for the 8 total testimonials: Rye, NH; Exeter, NH; Kennebunkport, ME; Newburyport, MA;Manchester, NH;  York, ME; Portsmouth, NH; Marblehead, MA.
+-Draft some language for the "contact us" page. It should begin, "customer service is our number one priority. We fill follow up with you shortly thereafter, you can also just email for general questions about taking care of your own pool. We love talking to people!"
+6- Tell me how to set up a custom domain email through cloudflare?
+7- Not for on the website, but tell me how to set up a payment link I can email or text to customers so they can put in their own payment info.

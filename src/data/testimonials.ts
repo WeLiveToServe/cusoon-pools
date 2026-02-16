@@ -1,22 +1,42 @@
 export const testimonials = [
   {
-    name: "Megan L.",
+    name: "Maya & Ames",
+    location: "Rye, NH",
+    quote: "They did a fabulous job opening our pool—everything was sparkling, the cover was stored properly, and the whole process was effortless.",
+  },
+  {
+    name: "Connor H.",
     location: "Exeter, NH",
-    quote: "Water went from cloudy to crystal in one visit. Fast, clean, and zero hassle.",
+    quote: "I called to get a new pump and they fixed the old one instead! Saved me hundreds and the pump runs like new.",
   },
   {
-    name: "Jason R.",
-    location: "Stratham, NH",
-    quote: "Heater failed on Friday, fixed by Monday. Clear pricing and no upsell games.",
+    name: "Lindsey P.",
+    location: "Kennebunkport, ME",
+    quote: "Called on Friday about a green mess and Sunday’s graduation party was perfect—clear water, spotless deck, zero stress.",
   },
   {
-    name: "Priya K.",
-    location: "Newmarket, NH",
-    quote: "Weekly service has been flawless. No algae surprises and updates after every visit.",
+    name: "The Aldens",
+    location: "Newburyport, MA",
+    quote: "Great service for years, and every neighbor we recommended has been unbelievably impressed.",
   },
   {
-    name: "Daniel S.",
-    location: "Hampton, NH",
-    quote: "On time, sharp techs, and our pump now runs quieter with lower energy use.",
+    name: "Theo J.",
+    location: "Manchester, NH",
+    quote: "Routine maintenance is predictable and honest—no surprise charges and they always explain what was done.",
+  },
+  {
+    name: "Rosa M.",
+    location: "York, ME",
+    quote: "The crew knows our schedule and keeps the pool clear even through pollen season.",
+  },
+  {
+    name: "Harper & Lee",
+    location: "Portsmouth, NH",
+    quote: "Every visit includes a full walkthrough and detailed notes—makes the ownership experience so much easier.",
+  },
+  {
+    name: "Celia R.",
+    location: "Marblehead, MA",
+    quote: "Always reliable, always responsive, and always ready with a recommendation when we have a question.",
   },
 ];
