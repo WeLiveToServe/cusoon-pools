@@ -17,7 +17,8 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
       <div class="space-y-6">
         <p class="text-xs uppercase tracking-[0.4em] text-sea">Pool Cleaning + Repair</p>
         <h1 class="font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
-          Premium pool care for <span class="text-gradient">Exeter, NH</span> and the Seacoast.
+          Friendly, professional pool and spa services for the Greater New England Seacost. We see what big
+          companies miss and always go the extra mile.
         </h1>
         <p class="text-lg text-ink/70">
           We keep pools clear, safe, and ready for every weekend. From weekly service to urgent repairs,
@@ -58,8 +59,8 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
           <img src={site.heroImage} alt="Clean backyard pool with clear water" class="h-full w-full object-cover" />
         </div>
         <div class="absolute -bottom-6 left-6 rounded-2xl bg-white px-5 py-3 shadow-lift">
-          <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Service Area</p>
-          <p class="font-semibold">{site.serviceArea.slice(0, 4).join(", ")}</p>
+          <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Coverage</p>
+          <p class="font-semibold">Greater New England Seacoast</p>
         </div>
       </div>
     </div>
@@ -72,9 +73,9 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
           <p class="text-xs uppercase tracking-[0.4em] text-sea">Services</p>
           <h2 class="font-display text-3xl sm:text-4xl">Everything your pool needs, handled in one visit.</h2>
         </div>
-        <a href="#contact" class="text-sm font-semibold uppercase tracking-[0.2em] text-sea">
-          Get a custom plan &rarr;
-        </a>
+        <div class="text-sm font-semibold uppercase tracking-[0.2em] text-ink/50">
+          Customer-first plans for Greater New England pools
+        </div>
       </div>
       <div class="mt-10 grid gap-6 lg:grid-cols-3">
         {services.map((service) => (
