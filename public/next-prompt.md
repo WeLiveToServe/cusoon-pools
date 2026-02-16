@@ -1,0 +1,9 @@
+1- change the heading of the top section from "POOL CLEANING + REPAIR" to "OPENINGS + REPAIRS + CLEANING + CLOSINGS", make font BOLD, and center the text left to right, Make all other similar headings BOLD and CENTERED
+2- Reduce the font size of of "Friendly, professional pool...." and all of the byline text fonts (eg "Every thing you...", "Homeowners" etc" to only 3 font sizes bigger than the "OPENINGS + REPARIS.." headers at the top of the body of each section. Also change the font type to <Sans Serif Inter>
+3-In the testimonials, eliminate the large gap between the quoted testimonial and the customer's name. 
+4- In testimonials, Change the name "Maya and Ames" to Stephen P; change the name The Aldens to "Rick and Suzie A."; change the name "Harper and Lee" to Michael and Seth G."
+5- Change the byline for the GALLERY section to "Some of our favorite pools in your neighborhood." 
+6- Second testimonial comment that these are too big, I want them square. Use cool visual quotation marks similar to those found on Angie's List.
+7- Change the title "RESOURCE CENTER" to "CUSOON BLOG". Change "Weekly maintenance, equipment, ..." to "Cleaning, maintenance, safety, chemistry, weather and other tips from the cusoon team."
+8-make the blog titles smaller font, remove the pill outline, put the date in the beginning of the byline. no more than 2 bylines each, with a dashed break line in between each. show the 5 most recent posts.
+- The contact us page is still blank. Draft some language for the "contact us" page. It should begin, "customer service is our number one priority. We fill follow up with you shortly thereafter, you can also just email for general questions about taking care of your own pool. We love talking to people!"

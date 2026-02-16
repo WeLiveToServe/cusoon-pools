@@ -1,6 +1,6 @@
 export const testimonials = [
   {
-    name: "Maya & Ames",
+    name: "Stephen P.",
     location: "Rye, NH",
     quote: "They did a fabulous job opening our pool—everything was sparkling, the cover was stored properly, and the whole process was effortless.",
   },
@@ -15,7 +15,7 @@ export const testimonials = [
     quote: "Called on Friday about a green mess and Sunday’s graduation party was perfect—clear water, spotless deck, zero stress.",
   },
   {
-    name: "The Aldens",
+    name: "Rick and Suzie A.",
     location: "Newburyport, MA",
     quote: "Great service for years, and every neighbor we recommended has been unbelievably impressed.",
   },
@@ -30,7 +30,7 @@ export const testimonials = [
     quote: "The crew knows our schedule and keeps the pool clear even through pollen season.",
   },
   {
-    name: "Harper & Lee",
+    name: "Michael and Seth G.",
     location: "Portsmouth, NH",
     quote: "Every visit includes a full walkthrough and detailed notes—makes the ownership experience so much easier.",
   },

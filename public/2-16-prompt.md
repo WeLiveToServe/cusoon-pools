@@ -1,7 +1,0 @@
-1- the logos are still not showing, please confirm the logo image names match up to the codebase and suggest a few reasons why this is happening?
-2- Reduce the font size of of "Friendly, professional pool...." at the top of the body of the page. Choose the font size so it takes up no more than 4 lines. you may reduce the left and right margins by 50% each.
-3-see screen shot, "schedule service" and "call 603..." are still visible. REMOVE those items entirely.
-4- make the testimonials a 2 column by 4 row grid. use square boxes. write 4 more testimonials. use the following towns for the 8 total testimonials: Rye, NH; Exeter, NH; Kennebunkport, ME; Newburyport, MA;Manchester, NH;  York, ME; Portsmouth, NH; Marblehead, MA.
--Draft some language for the "contact us" page. It should begin, "customer service is our number one priority. We fill follow up with you shortly thereafter, you can also just email for general questions about taking care of your own pool. We love talking to people!"
-6- Tell me how to set up a custom domain email through cloudflare?
-7- Not for on the website, but tell me how to set up a payment link I can email or text to customers so they can put in their own payment info.

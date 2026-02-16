@@ -12,30 +12,30 @@ const sortedPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
 >
   <section class="py-16">
     <div class="container">
-      <p class="text-xs uppercase tracking-[0.4em] text-sea">Blog</p>
-      <h1 class="mt-3 font-display text-4xl sm:text-5xl">Pool care insights from the Cusoon team.</h1>
-      <p class="mt-4 max-w-2xl text-lg text-ink/70">
-        Maintenance tips, seasonal guides, and equipment advice designed for pools in Exeter and the Seacoast.
-      </p>
-      <ol class="mt-12 divide-y divide-sand overflow-hidden rounded-3xl border border-sand bg-white shadow-lift">
-        {sortedPosts.map((post) => (
-          <li>
-            <a
-              href={`/blog/${post.slug}`}
-              class="group block px-6 py-6 transition hover:bg-sand/40 sm:px-8"
-            >
-              <div class="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-                <p class="text-xs uppercase tracking-[0.2em] text-ink/50">{formatLongDate(post.date)}</p>
-                <span class="hidden text-sm font-semibold uppercase tracking-[0.2em] text-sea group-hover:text-ink sm:inline">
-                  Read &rarr;
-                </span>
-              </div>
-              <h2 class="mt-2 font-display text-2xl text-ink group-hover:text-sea transition">{post.title}</h2>
-              <p class="mt-2 max-w-3xl text-ink/70">{post.excerpt}</p>
-            </a>
-          </li>
+      <div class="space-y-4 text-center">
+        <p class="text-xs uppercase tracking-[0.4em] text-sea font-bold">CUSOON BLOG</p>
+        <h1 class="mt-3 font-display text-3xl sm:text-4xl font-bold">
+          Cleaning, maintenance, safety, chemistry, weather and other tips from the Cusoon team.
+        </h1>
+      </div>
+      <div class="mt-10 space-y-6">
+        {sortedPosts.map((post, index) => (
+          <>
+            <article class="rounded-3xl border border-sand bg-white/80 p-6 shadow-sm">
+              <a href={`/blog/${post.slug}`} class="block">
+                <h2 class="text-xl font-semibold text-ink">{post.title}</h2>
+                <p class="mt-3 text-sm text-ink/70">
+                  {formatLongDate(post.date)} · {post.excerpt}
+                </p>
+                {post.sections[0]?.title ? (
+                  <p class="mt-2 text-sm text-ink/60">{post.sections[0].title}</p>
+                ) : null}
+              </a>
+            </article>
+            {index < sortedPosts.length - 1 && <div class="border-t border-dashed border-ink/20"></div>}
+          </>
         ))}
-      </ol>
+      </div>
     </div>
   </section>
 </Base>
