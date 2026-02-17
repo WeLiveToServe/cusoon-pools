@@ -111,9 +111,31 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
     </div>
   </section>
 
+  <section class="py-4 lg:hidden">
+    <div class="container">
+      <button
+        type="button"
+        class="w-full rounded-2xl border border-sand bg-white p-4 text-left shadow-lift"
+        data-home-sections-toggle
+        aria-expanded="false"
+      >
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <p class="text-xs uppercase tracking-[0.3em] text-sea">Display</p>
+            <p class="mt-1 text-sm font-semibold text-ink" data-home-sections-label>
+              Show testimonials, gallery, and blog
+            </p>
+          </div>
+          <span class="text-2xl font-semibold leading-none text-ink" data-home-sections-icon>^</span>
+        </div>
+      </button>
+    </div>
+  </section>
+
   <section
     id="testimonials"
-    class="py-16 bg-[linear-gradient(180deg,rgba(96,200,215,0.18)_0%,rgba(255,255,255,1)_58%)]"
+    class="hidden py-16 bg-[linear-gradient(180deg,rgba(96,200,215,0.18)_0%,rgba(255,255,255,1)_58%)] lg:block"
+    data-home-expand-section
   >
     <div class="container">
       <p class="text-xs uppercase tracking-[0.4em] text-sea">Testimonials</p>
@@ -135,7 +157,7 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
       </div>
     </div>
   </section>
-  <section id="gallery" class="py-16 bg-white">
+  <section id="gallery" class="hidden py-16 bg-white lg:block" data-home-expand-section>
     <div class="container">
       <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
@@ -160,7 +182,7 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
     </div>
   </section>
 
-  <section class="py-16">
+  <section class="hidden py-16 lg:block" data-home-expand-section>
     <div class="container grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
       <div>
         <p class="text-xs uppercase tracking-[0.4em] text-sea">Resource Center</p>
@@ -261,4 +283,40 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
     </div>
   </section>
 </Base>
+
+<script is:inline>
+  const homeToggle = document.querySelector("[data-home-sections-toggle]");
+  const homeSections = document.querySelectorAll("[data-home-expand-section]");
+  const homeToggleLabel = document.querySelector("[data-home-sections-label]");
+  const homeToggleIcon = document.querySelector("[data-home-sections-icon]");
+
+  if (homeToggle && homeSections.length) {
+    let expanded = false;
+    const desktopMedia = window.matchMedia("(min-width: 1024px)");
+
+    const applyState = () => {
+      const isDesktop = desktopMedia.matches;
+      homeSections.forEach((section) => {
+        section.classList.toggle("hidden", !isDesktop && !expanded);
+      });
+      homeToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+      if (homeToggleLabel) {
+        homeToggleLabel.textContent = expanded
+          ? "Hide testimonials, gallery, and blog"
+          : "Show testimonials, gallery, and blog";
+      }
+      if (homeToggleIcon) {
+        homeToggleIcon.textContent = expanded ? "v" : "^";
+      }
+    };
+
+    homeToggle.addEventListener("click", () => {
+      expanded = !expanded;
+      applyState();
+    });
+
+    desktopMedia.addEventListener("change", applyState);
+    applyState();
+  }
+</script>
 
