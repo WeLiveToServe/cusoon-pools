@@ -19,8 +19,8 @@ export default {
         sun: "rgb(var(--color-sun) / <alpha-value>)",
       },
       fontFamily: {
-        display: ["\"Fraunces\"", "serif"],
-        body: ["\"Manrope\"", "system-ui", "sans-serif"],
+        display: ["\"Inter\"", "system-ui", "sans-serif"],
+        body: ["\"Inter\"", "system-ui", "sans-serif"],
       },
       boxShadow: {
         lift: "0 18px 45px -30px rgb(10 28 44 / 0.6)",
