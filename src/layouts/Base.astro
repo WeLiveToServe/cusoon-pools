@@ -22,6 +22,8 @@ const jsonLd = {
   areaServed: site.serviceArea,
   url: "https://cusoon-pools.com/",
 };
+
+const emailHref = `mailto:${site.email}?cc=${site.secondaryEmail}`;
 ---
 <!doctype html>
 <html lang="en">
@@ -100,7 +102,7 @@ const jsonLd = {
             <span>Free Quote</span>
           </a>
           <a
-            href={`mailto:${site.email}`}
+            href={emailHref}
             class="inline-flex items-center gap-2 rounded-full border border-sea/25 bg-aqua/25 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-ink shadow-lift hover:bg-aqua/40 hover:border-sea/40 transition"
           >
             <span>Email Us</span>
@@ -124,7 +126,7 @@ const jsonLd = {
             <span>Free Quote</span>
           </a>
           <a
-            href={`mailto:${site.email}`}
+            href={emailHref}
             class="inline-flex items-center gap-2 rounded-full border border-sea/25 bg-aqua/25 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-ink shadow-lift hover:bg-aqua/40 hover:border-sea/40 transition"
           >
             <span>Email Us</span>

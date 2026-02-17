@@ -3,7 +3,8 @@ export const site = {
   phone: "603-575-9800",
   tel: "6035759800",
   location: "Exeter, NH",
-  email: "hello@cusoon-pools.com",
+  email: "alchemyboston@gmail.com",
+  secondaryEmail: "keith.harmon@gmail.com",
   heroImage: "/gallery-1.jpg",
   galleryImages: [
     "/gallery-1.jpg",

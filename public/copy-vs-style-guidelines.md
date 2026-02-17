@@ -196,6 +196,38 @@ Style-only change request:
   4) Change only class attributes.
 ```
 
+### Functionality-only template (no copy/style changes)
+Use this when behavior should change (links, logic, wiring, data flow) while keeping existing copy and visual styling intact.
+
+```md
+Functionality-only change request:
+- Goal: <what behavior should change>
+- Target files: <path:line>, <path:line>
+- Allowed changes:
+  - logic, handlers, link destinations/protocols, data wiring
+- Constraints:
+  1) Do not change visible text content.
+  2) Do not change existing class values or design tokens.
+  3) Do not add/remove cards or fields unless explicitly requested.
+  4) Do not edit hero banner.
+  5) Keep edits minimal and focused on behavior only.
+```
+
+Example:
+
+```md
+Functionality-only change request:
+- Goal: Route Email CTA to primary email with secondary email on CC.
+- Target files: src/data/site.ts:6, src/layouts/Base.astro:103
+- Allowed changes:
+  - update shared contact data and `mailto:` link wiring
+- Constraints:
+  1) Do not change visible text content.
+  2) Do not change existing class values.
+  3) Do not edit hero banner.
+  4) Keep edits minimal and behavior-only.
+```
+
 ### Shared-data template (update both dedicated + home automatically)
 ```md
 Copy-only change request using shared data:
