@@ -16,14 +16,14 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
     <div class="container relative grid gap-8 py-4 lg:py-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
       <div class="space-y-6">
         <p class="text-xs uppercase tracking-[0.4em] text-sea">Pool Cleaning + Repair</p>
-        <h1 class="font-display text-3xl leading-tight tracking-tight sm:text-4xl lg:text-5xl max-w-3xl">
+        {false && <h1 class="font-display text-3xl leading-tight tracking-tight sm:text-4xl lg:text-5xl max-w-3xl">
           Friendly, professional pool and spa services for the Greater New England Seacost. We see what big
           companies miss and always go the extra mile.
-        </h1>
-        <p class="text-lg text-ink/70">
+        </h1>}
+        {false && <p class="text-lg text-ink/70">
           We keep pools clear, safe, and ready for every weekend. From weekly service to urgent repairs,
           Cusoon Pools delivers precise chemistry, spotless surfaces, and reliable equipment.
-        </p>
+        </p>}
         <div class="grid gap-4 pt-6 sm:grid-cols-3">
           <div class="rounded-2xl border border-sand bg-white/80 p-4 shadow-lift">
             <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Response</p>
