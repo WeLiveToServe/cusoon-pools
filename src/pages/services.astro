@@ -7,15 +7,15 @@ import { services } from "../data/services";
   description="Detailed service options for cleaning, repair, and seasonal care from Cusoon Pools."
   canonical="https://cusoon-pools.com/services/"
 >
-  <section class="pt-10 pb-16">
+  <section class="pt-10 pb-16"> 
     <div class="container">
       <div class="mx-auto max-w-4xl text-center">
         <p class="text-base uppercase tracking-[0.4em] text-sea/80 sm:text-xl">Openings + Cleaning + Repairs + Closings</p>
-        <h1 class="mt-6 font-display text-2xl sm:text-3xl">We offer a full range of pool services, equipment repairs, and anything else your pool and deck require. Let us know what you need and we'll help. No big company sales pitches.</h1>
-        <p class="mt-4 text-lg text-ink/70">
+        {false && <h1 class="mt-6 font-display text-2xl sm:text-3xl">We offer a full range of pool services, equipment repairs, and anything else your pool and deck require. Let us know what you need and we'll help. No big company sales pitches.</h1>}
+        {false && <p class="mt-4 text-lg text-ink/70">
           Weekly cleanings, repairs, openings, closings, and emergency attention delivered by our team of friendly experts.
           We'll work with you to customize a plan for your needs.
-        </p>
+        </p>}
       </div>
       <div class="mt-12 grid gap-6 lg:grid-cols-3">
         {services.map((service) => (
