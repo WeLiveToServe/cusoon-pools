@@ -28,53 +28,139 @@ import { site } from "../data/site";
           </p>
         </div>
       </div>
-      <form class="rounded-3xl bg-white/10 p-6 backdrop-blur">
+      <form class="rounded-3xl bg-white/10 p-6 backdrop-blur" data-quote-form>
         <div class="grid gap-4 sm:grid-cols-2">
           <label class="text-sm">
-            Full Name
+            Name
             <input
               type="text"
               name="name"
+              required
+              autocomplete="name"
               placeholder="Your name"
               class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50"
             />
           </label>
           <label class="text-sm">
-            Phone
+            Email
             <input
-              type="tel"
-              name="phone"
-              placeholder="(603) 555-0000"
+              type="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="you@email.com"
               class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50"
             />
           </label>
         </div>
         <label class="mt-4 block text-sm">
-          Email
+          Phone
           <input
-            type="email"
-            name="email"
-            placeholder="you@email.com"
+            type="tel"
+            name="phone"
+            required
+            autocomplete="tel"
+            placeholder="(603) 555-0000"
             class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50"
           />
         </label>
-        <label class="mt-4 block text-sm">
-          Service details
-          <textarea
-            name="message"
-            rows={4}
-            placeholder="Weekly cleaning, repair, opening, or other details."
-            class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50"
-          ></textarea>
-        </label>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2">
+          <fieldset class="rounded-2xl border border-white/20 bg-white/5 p-4">
+            <legend class="px-1 text-sm font-semibold">Type of quote request (optional)</legend>
+            <div class="mt-3 space-y-2 text-sm text-white/90">
+              <label class="flex items-center gap-2">
+                <input type="radio" name="quoteType" value="opening/closing" class="h-4 w-4 accent-aqua" />
+                <span>opening/closing</span>
+              </label>
+              <label class="flex items-center gap-2">
+                <input type="radio" name="quoteType" value="regular cleaning service" class="h-4 w-4 accent-aqua" />
+                <span>regular cleaning service</span>
+              </label>
+              <label class="flex items-center gap-2">
+                <input type="radio" name="quoteType" value="equipment repairs and maintenance" class="h-4 w-4 accent-aqua" />
+                <span>equipment repairs and maintenance</span>
+              </label>
+              <label class="flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="quoteType"
+                  value="structural repair (tile, deck, cover anchors, etc...)"
+                  class="h-4 w-4 accent-aqua"
+                />
+                <span>structural repair (tile, deck, cover anchors, etc...)</span>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset class="rounded-2xl border border-white/20 bg-white/5 p-4">
+            <legend class="px-1 text-sm font-semibold">How should we get in touch? (optional)</legend>
+            <div class="mt-3 space-y-2 text-sm text-white/90">
+              <label class="flex items-center gap-2">
+                <input type="radio" name="contactMethod" value="call me" class="h-4 w-4 accent-aqua" />
+                <span>call me</span>
+              </label>
+              <label class="flex items-center gap-2">
+                <input type="radio" name="contactMethod" value="email me" class="h-4 w-4 accent-aqua" />
+                <span>email me</span>
+              </label>
+              <label class="flex items-center gap-2">
+                <input type="radio" name="contactMethod" value="text me" class="h-4 w-4 accent-aqua" />
+                <span>text me</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
         <button
           type="submit"
+          data-quote-submit
           class="mt-6 w-full rounded-full bg-sun px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-ink transition hover:bg-aqua"
         >
-          Request a Quote
+          Free Quote
         </button>
-        <p class="mt-3 text-xs text-white/60">This form is a placeholder; connect it to your CRM or Formspree.</p>
+        <p class="mt-3 hidden text-xs text-white/80" data-quote-status></p>
       </form>
     </div>
   </section>
 </Base>
+
+<script is:inline>
+  const quoteForm = document.querySelector("[data-quote-form]");
+  const quoteStatus = document.querySelector("[data-quote-status]");
+  const quoteSubmit = document.querySelector("[data-quote-submit]");
+
+  if (quoteForm instanceof HTMLFormElement) {
+    quoteForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!quoteForm.reportValidity()) return;
+
+      if (quoteSubmit instanceof HTMLButtonElement) {
+        quoteSubmit.disabled = true;
+      }
+
+      try {
+        const response = await fetch("/api/quote", {
+          method: "POST",
+          body: new FormData(quoteForm),
+        });
+
+        if (!response.ok) {
+          throw new Error("Quote request failed");
+        }
+
+        quoteForm.reset();
+        if (quoteStatus instanceof HTMLElement) {
+          quoteStatus.textContent = "lorum ipson";
+          quoteStatus.classList.remove("hidden");
+        }
+      } catch (_error) {
+        if (quoteStatus instanceof HTMLElement) {
+          quoteStatus.textContent = "Unable to submit right now. Please call or email us.";
+          quoteStatus.classList.remove("hidden");
+        }
+      } finally {
+        if (quoteSubmit instanceof HTMLButtonElement) {
+          quoteSubmit.disabled = false;
+        }
+      }
+    });
+  }
+</script>
