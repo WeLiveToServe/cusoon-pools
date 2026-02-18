@@ -9,22 +9,22 @@ import { compareIsoDateDesc, formatLongDate } from "../lib/dates";
 const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.date)).slice(0, 3);
 ---
 <Base>
-  <section class="relative overflow-hidden">
+  <section class="relative overflow-hidden pt-6 pb-12">
     <div class="absolute inset-0">
       <div class="h-full w-full bg-[radial-gradient(circle_at_top,_rgba(96,200,215,0.35),_transparent_55%)]"></div>
     </div>
-    <div class="container relative grid gap-8 py-4 lg:py-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-      <div class="space-y-6">
-        <p class="text-xs uppercase tracking-[0.4em] text-sea">Pool Cleaning + Repair</p>
-        {false && <h1 class="font-display text-3xl leading-tight tracking-tight sm:text-4xl lg:text-5xl max-w-3xl">
+    <div class="container relative">
+      <div class="mx-auto max-w-4xl space-y-4 text-center">
+        <p class="text-sm font-medium uppercase tracking-[0.3em] text-ink/60 sm:text-lg">Pool Cleaning + Repair</p>
+        <h1 class="mx-auto max-w-4xl font-display text-2xl sm:text-3xl">
           Friendly, professional pool and spa services for the Greater New England Seacost. We see what big
           companies miss and always go the extra mile.
-        </h1>}
+        </h1>
         {false && <p class="text-lg text-ink/70">
           We keep pools clear, safe, and ready for every weekend. From weekly service to urgent repairs,
           Cusoon Pools delivers precise chemistry, spotless surfaces, and reliable equipment.
         </p>}
-        <div class="grid gap-4 pt-6 sm:grid-cols-3">
+        <div class="grid gap-4 pt-4 sm:grid-cols-3">
           <div class="rounded-2xl border border-sand bg-white/80 p-4 shadow-lift">
             <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Response</p>
             <p class="mt-2 font-semibold">Same-week bookings</p>
@@ -39,31 +39,20 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
           </div>
         </div>
       </div>
-      <div class="relative">
-        <div class="absolute -inset-6 rounded-[32px] bg-[conic-gradient(from_90deg_at_50%_50%,_rgba(0,126,163,0.3),_rgba(96,200,215,0.2),_rgba(255,186,73,0.25),_rgba(0,126,163,0.3))] blur-2xl"></div>
-        <div class="relative overflow-hidden rounded-[28px] border border-white/70 bg-white/70 shadow-lift">
-          <img src={site.heroImage} alt="Clean backyard pool with clear water" class="h-full w-full object-cover" />
-        </div>
-        <div class="absolute -bottom-6 left-6 rounded-2xl bg-white px-5 py-3 shadow-lift">
-          <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Coverage</p>
-          <p class="font-semibold">Greater New England Seacoast</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <section id="services" class="py-16">
+  <section id="services" class="pt-6 pb-12">
     <div class="container">
-      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div>
-          <p class="text-xs uppercase tracking-[0.4em] text-sea">Services</p>
-          <h2 class="font-display text-3xl sm:text-4xl">Everything your pool needs, handled in one visit.</h2>
-        </div>
-        <div class="text-sm font-semibold uppercase tracking-[0.2em] text-ink/50">
-          Customer-first plans for Greater New England pools
-        </div>
+      <div class="mx-auto max-w-4xl text-center">
+          <p class="text-sm font-medium uppercase tracking-[0.3em] text-ink/60 sm:text-lg">Services</p>
+          {false && <h2 class="mt-6 font-display text-2xl sm:text-3xl">We offer a full range of pool services, equipment repairs, and anything else your pool and deck require. Let us know what you need and we'll help. No big company sales pitches.</h2>}
+          {false && <p class="mt-4 text-lg text-ink/70">
+            Weekly cleanings, repairs, openings, closings, and emergency attention delivered by our team of friendly experts.
+            We'll work with you to customize a plan for your needs.
+          </p>}
       </div>
-      <div class="mt-10 grid gap-6 lg:grid-cols-3">
+      <div class="mt-8 grid gap-6 lg:grid-cols-3">
         {services.map((service) => (
           <article class="rounded-3xl border border-sand bg-white p-6 shadow-lift">
             <h3 class="font-display text-2xl">{service.title}</h3>
@@ -111,36 +100,16 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
     </div>
   </section>
 
-  <section class="py-4 lg:hidden">
-    <div class="container">
-      <button
-        type="button"
-        class="w-full rounded-2xl border border-sand bg-white p-4 text-left shadow-lift"
-        data-home-sections-toggle
-        aria-expanded="false"
-      >
-        <div class="flex items-center justify-between gap-4">
-          <div>
-            <p class="text-xs uppercase tracking-[0.3em] text-sea">Display</p>
-            <p class="mt-1 text-sm font-semibold text-ink" data-home-sections-label>
-              Show testimonials, gallery, and blog
-            </p>
-          </div>
-          <span class="text-2xl font-semibold leading-none text-ink" data-home-sections-icon>^</span>
-        </div>
-      </button>
-    </div>
-  </section>
-
   <section
     id="testimonials"
-    class="hidden py-16 bg-[linear-gradient(180deg,rgba(96,200,215,0.18)_0%,rgba(255,255,255,1)_58%)] lg:block"
-    data-home-expand-section
+    class="pt-6 pb-10 bg-[linear-gradient(180deg,rgba(96,200,215,0.18)_0%,rgba(255,255,255,1)_58%)]"
   >
     <div class="container">
-      <p class="text-xs uppercase tracking-[0.4em] text-sea">Testimonials</p>
-      <h2 class="mt-3 font-display text-3xl sm:text-4xl text-ink">Gorgeous Pools + Great Service + Low Prices = Happy Customers!</h2>
-      <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      <div class="mx-auto max-w-4xl text-center">
+        <p class="text-sm font-medium uppercase tracking-[0.3em] text-ink/60 sm:text-lg">Testimonials</p>
+        <h2 class="mt-0.5 text-sm text-ink/70">Great Service + Low Prices = Happy Owners!</h2>
+      </div>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
         {testimonials.map((testimonial, index) => (
           <article
             class={`rounded-3xl border p-6 shadow-lift ${
@@ -157,24 +126,19 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
       </div>
     </div>
   </section>
-  <section id="gallery" class="hidden py-16 bg-white lg:block" data-home-expand-section>
+  <section id="gallery" class="pt-6 pb-12 bg-white">
     <div class="container">
-      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div>
-          <p class="text-xs uppercase tracking-[0.4em] text-sea">Gallery</p>
-          <h2 class="font-display text-3xl sm:text-4xl">These are a few of our favorite pools:</h2>
-        </div>
-        <a href="#contact" class="text-sm font-semibold uppercase tracking-[0.2em] text-sea">
-          Book a walkthrough &rarr;
-        </a>
+      <div class="mx-auto max-w-4xl text-center">
+          <p class="text-sm font-medium uppercase tracking-[0.3em] text-ink/60 sm:text-lg">Gallery</p>
+          {false && <h2 class="mt-6 font-display text-2xl sm:text-3xl">These are a few of our favorite pools:</h2>}
       </div>
-      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {site.galleryImages.map((imageUrl, index) => (
           <div class="group relative overflow-hidden rounded-3xl border border-sand shadow-lift">
             <img
               src={imageUrl}
               alt="Pool service project"
-              class="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
+              class="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
             />
           </div>
         ))}
@@ -182,19 +146,15 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
     </div>
   </section>
 
-  <section class="hidden py-16 lg:block" data-home-expand-section>
-    <div class="container grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-      <div>
-        <p class="text-xs uppercase tracking-[0.4em] text-sea">CUSOON BLOG</p>
-        <h2 class="mt-3 font-display text-3xl sm:text-4xl">Pool care tips written for Seacoast owners.</h2>
-        <p class="mt-4 text-ink/70">
-          Tips and tricks from our team.
-        </p>
-        <a href="/blog" class="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.2em] text-sea">
-          See all posts &rarr;
-        </a>
+  <section class="pt-6 pb-12">
+    <div class="container">
+      <div class="mx-auto max-w-4xl text-center">
+        <p class="text-sm font-medium uppercase tracking-[0.3em] text-ink/60 sm:text-lg">CUSOON BLOG</p>
+        {false && <h2 class="mx-auto mt-6 max-w-4xl font-display text-2xl sm:text-3xl">
+          Useful tips and topics from the CUSOON team on weekly (and emergency!) cleaning, equipment maintenance, pool area safety, chemistry 101/201/301, all-weather best practices, and other topics.
+        </h2>}
       </div>
-      <div class="grid gap-5">
+      <div class="mt-8 grid gap-5">
         {latestPosts.map((post) => (
           <article class="rounded-3xl border border-sand bg-white p-6 shadow-lift">
             <p class="text-xs uppercase tracking-[0.2em] text-ink/50">{formatLongDate(post.date)}</p>
@@ -206,32 +166,22 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
             <p class="mt-3 text-ink/70">{post.excerpt}</p>
           </article>
         ))}
-      </div>
+      </div>      
     </div>
   </section>
 
-  <section id="contact" class="py-16 bg-ink text-white">
+  <section id="contact" class="pt-6 pb-12">
     <div class="container grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-      <div>
-        <p class="text-xs uppercase tracking-[0.4em] text-aqua">Contact Us</p>
-        <h2 class="mt-3 font-display text-3xl sm:text-4xl">Tell us about your pool and we will handle the rest.</h2>
-        <p class="mt-4 text-white/70">
-          Fast estimates, clear timelines, and a service plan built around your schedule.
-          We are based in Exeter, NH and serve the Seacoast.
-        </p>
-        <div class="mt-6 space-y-2 text-sm">
-          <p>
-            <span class="text-white/60">Phone:</span> {site.phone}
-          </p>
-          <p>
-            <span class="text-white/60">Email:</span> {site.email}
-          </p>
-          <p>
-            <span class="text-white/60">Hours:</span> {site.hours}
-          </p>
-        </div>
+      <div class="text-center">
+        <p class="text-sm font-medium uppercase tracking-[0.3em] text-ink/60 sm:text-lg">Get a Quote</p>
+        <p class="mt-0.5 text-sm text-ink/70">(no pressure!)</p>
+        {false && <h2 class="mt-6 font-display text-2xl sm:text-3xl">Tell us about your pool.</h2>}
+        {false && <p class="mt-4 text-ink/70">
+          customer service is our number one priority. We fill follow up with you shortly thereafter, you can also
+          just email for general questions about taking care of your own pool. We love talking to people!
+        </p>}
       </div>
-      <form class="rounded-3xl bg-white/10 p-6 backdrop-blur">
+      <form class="rounded-3xl border border-sand bg-white p-6 shadow-lift">
         <div class="grid gap-4 sm:grid-cols-2">
           <label class="text-sm">
             Full Name
@@ -239,7 +189,7 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
               type="text"
               name="name"
               placeholder="Your name"
-              class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50"
+              class="mt-2 w-full rounded-xl border border-ink/20 bg-white px-4 py-3 text-ink placeholder:text-ink/50"
             />
           </label>
           <label class="text-sm">
@@ -248,7 +198,7 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
               type="tel"
               name="phone"
               placeholder="(603) 555-0000"
-              class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50"
+              class="mt-2 w-full rounded-xl border border-ink/20 bg-white px-4 py-3 text-ink placeholder:text-ink/50"
             />
           </label>
         </div>
@@ -258,7 +208,7 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
             type="email"
             name="email"
             placeholder="you@email.com"
-            class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50"
+            class="mt-2 w-full rounded-xl border border-ink/20 bg-white px-4 py-3 text-ink placeholder:text-ink/50"
           />
         </label>
         <label class="mt-4 block text-sm">
@@ -267,7 +217,7 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
             name="message"
             rows={4}
             placeholder="Weekly cleaning, repair, opening, or other details."
-            class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50"
+            class="mt-2 w-full rounded-xl border border-ink/20 bg-white px-4 py-3 text-ink placeholder:text-ink/50"
           ></textarea>
         </label>
         <button
@@ -276,47 +226,10 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
         >
           Request a Quote
         </button>
-        <p class="mt-3 text-xs text-white/60">
+        <p class="mt-3 text-xs text-ink/60">
           This form is a placeholder. Connect it to Formspree, Web3Forms, or your CRM.
         </p>
       </form>
     </div>
   </section>
 </Base>
-
-<script is:inline>
-  const homeToggle = document.querySelector("[data-home-sections-toggle]");
-  const homeSections = document.querySelectorAll("[data-home-expand-section]");
-  const homeToggleLabel = document.querySelector("[data-home-sections-label]");
-  const homeToggleIcon = document.querySelector("[data-home-sections-icon]");
-
-  if (homeToggle && homeSections.length) {
-    let expanded = false;
-    const desktopMedia = window.matchMedia("(min-width: 1024px)");
-
-    const applyState = () => {
-      const isDesktop = desktopMedia.matches;
-      homeSections.forEach((section) => {
-        section.classList.toggle("hidden", !isDesktop && !expanded);
-      });
-      homeToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-      if (homeToggleLabel) {
-        homeToggleLabel.textContent = expanded
-          ? "Hide testimonials, gallery, and blog"
-          : "Show testimonials, gallery, and blog";
-      }
-      if (homeToggleIcon) {
-        homeToggleIcon.textContent = expanded ? "v" : "^";
-      }
-    };
-
-    homeToggle.addEventListener("click", () => {
-      expanded = !expanded;
-      applyState();
-    });
-
-    desktopMedia.addEventListener("change", applyState);
-    applyState();
-  }
-</script>
-
