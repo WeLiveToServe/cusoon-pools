@@ -7,13 +7,13 @@ import { site } from "../data/site";
   description="Before-and-after gallery from Cusoon Pools' cleaning, repair, and seasonal service jobs."
   canonical="https://cusoon-pools.com/gallery/"
 >
-  <section class="pt-10 pb-16">
+  <section class="pt-6 pb-12">
     <div class="container">
       <div class="mx-auto max-w-4xl text-center">
-        <p class="text-base uppercase tracking-[0.4em] text-sea/80 sm:text-xl">Gallery</p>
+        <p class="text-sm font-medium uppercase tracking-[0.3em] text-ink/60 sm:text-lg">Gallery</p>
         {false && <h1 class="mt-6 font-display text-2xl sm:text-3xl">These are a few of our favorite pools:</h1>}
       </div>
-      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {site.galleryImages.map((imageUrl, index) => (
           <div class="group relative overflow-hidden rounded-3xl border border-sand shadow-lift">
             <img
