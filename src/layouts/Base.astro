@@ -140,12 +140,12 @@ const emailHref = `mailto:${site.email}?cc=${site.secondaryEmail}`;
     </main>
 
     <footer class="border-t border-sand bg-white">
-      <div class="container grid gap-8 py-12 md:grid-cols-[1.1fr_0.9fr]">
-        <div>
-          <p class="font-display text-2xl text-gradient">Cusoon Pools</p>
-          <p class="mt-3 text-sm text-ink/70">
-            Pool cleaning, repairs, and seasonal service built for New England weather.
-          </p>
+      <div class="container grid items-center gap-6 py-8 md:grid-cols-[1.1fr_0.9fr]">
+        <div class="flex items-center">
+          <picture>
+            <source media="(max-width: 639px)" srcset="/cusoon-logo-square-mobile.png" />
+            <img src="/cusoon-logo-horizontal-desktop.png" alt="Cusoon Pools logo" class="h-10 w-auto sm:h-12" />
+          </picture>
         </div>
         <div>
           <p class="text-xs uppercase tracking-[0.2em] text-ink/60">Contact</p>
