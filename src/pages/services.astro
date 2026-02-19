@@ -1,4 +1,4 @@
----
+﻿---
 import Base from "../layouts/Base.astro";
 import { services } from "../data/services";
 ---
@@ -7,11 +7,12 @@ import { services } from "../data/services";
   description="Detailed service options for cleaning, repair, and seasonal care from Cusoon Pools."
   canonical="https://cusoon-pools.com/services/"
 >
-  <section class="pt-6 pb-12"> 
+  <section class="pt-6 pb-12">
     <div class="container">
       <div class="mx-auto max-w-4xl text-center">
         <p class="text-sm font-medium uppercase tracking-[0.3em] text-ink/60 sm:text-lg">Openings + Cleaning + Repairs + Closings</p>
-        {false && <h1 class="mt-6 font-display text-2xl sm:text-3xl">We offer a full range of pool services, equipment repairs, and anything else your pool and deck require. Let us know what you need and we'll help. No big company sales pitches.</h1>}
+        <h1 class="mt-2 font-display text-2xl sm:text-3xl">Services</h1>
+        {false && <p class="mt-6 text-lg text-ink/70">We offer a full range of pool services, equipment repairs, and anything else your pool and deck require. Let us know what you need and we'll help. No big company sales pitches.</p>}
         {false && <p class="mt-4 text-lg text-ink/70">
           Weekly cleanings, repairs, openings, closings, and emergency attention delivered by our team of friendly experts.
           We'll work with you to customize a plan for your needs.
@@ -24,7 +25,7 @@ import { services } from "../data/services";
             <p class="mt-3 text-ink/70">{service.description}</p>
             <ul class="mt-5 space-y-2 text-sm text-ink/70">
               {service.highlights.map((highlight) => (
-                <li>• {highlight}</li>
+                <li>&bull; {highlight}</li>
               ))}
             </ul>
           </article>

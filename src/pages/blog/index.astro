@@ -1,4 +1,4 @@
----
+﻿---
 import Base from "../../layouts/Base.astro";
 import { blogPosts } from "../../data/blog";
 import { compareIsoDateDesc, formatLongDate } from "../../lib/dates";
@@ -14,9 +14,8 @@ const sortedPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
     <div class="container">
       <div class="space-y-4 text-center">
         <p class="text-sm font-medium uppercase tracking-[0.3em] text-ink/60 sm:text-lg">CUSOON BLOG</p>
-        {false && <h1 class="mx-auto mt-6 max-w-4xl font-display text-2xl sm:text-3xl">
-          Useful tips and topics from the CUSOON team on weekly (and emergency!) cleaning, equipment maintenance, pool area safety, chemistry 101/201/301, all-weather best practices, and other topics.
-        </h1>}
+        <h1 class="mx-auto mt-2 max-w-4xl font-display text-2xl sm:text-3xl">Pool Care Blog</h1>
+        {false && <p class="mx-auto max-w-4xl text-ink/70">Useful tips and topics from the Cusoon team on cleaning, equipment maintenance, safety, chemistry, and all-weather best practices.</p>}
       </div>
       <div class="mt-8 space-y-6">
         {sortedPosts.map((post, index) => (
@@ -25,7 +24,7 @@ const sortedPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
               <a href={`/blog/${post.slug}`} class="block">
                 <h2 class="text-xl font-semibold text-ink">{post.title}</h2>
                 <p class="mt-3 text-sm text-ink/70">
-                  {formatLongDate(post.date)} · {post.excerpt}
+                  {formatLongDate(post.date)} &middot; {post.excerpt}
                 </p>
                 {post.sections[0]?.title ? (
                   <p class="mt-2 text-sm text-ink/60">{post.sections[0].title}</p>

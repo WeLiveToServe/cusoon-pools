@@ -1,4 +1,4 @@
----
+﻿---
 import Base from "../layouts/Base.astro";
 import { site } from "../data/site";
 ---
@@ -11,7 +11,8 @@ import { site } from "../data/site";
     <div class="container">
       <div class="mx-auto max-w-4xl text-center">
         <p class="text-sm font-medium uppercase tracking-[0.3em] text-ink/60 sm:text-lg">Gallery</p>
-        {false && <h1 class="mt-6 font-display text-2xl sm:text-3xl">These are a few of our favorite pools:</h1>}
+        <h1 class="mt-2 font-display text-2xl sm:text-3xl">Pool Service Gallery</h1>
+        {false && <p class="mt-6 text-ink/70">These are a few of our favorite pools.</p>}
       </div>
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {site.galleryImages.map((imageUrl, index) => (

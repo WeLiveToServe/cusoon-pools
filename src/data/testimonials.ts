@@ -1,8 +1,8 @@
-export const testimonials = [
+﻿export const testimonials = [
   {
     name: "Stephen P.",
     location: "Rye, NH",
-    quote: "They did a fabulous job opening our pool—everything was sparkling, the cover was stored properly, and the whole process was effortless.",
+    quote: "They did a fabulous job opening our pool.. everything was sparkling, the cover was stored properly, and the whole process was effortless.",
   },
   {
     name: "Connor H.",
@@ -12,7 +12,7 @@ export const testimonials = [
   {
     name: "Lindsey P.",
     location: "Kennebunkport, ME",
-    quote: "Called on Friday about a green mess and Sunday’s graduation party was perfect—clear water, spotless deck, zero stress.",
+    quote: "Called on Friday about a green mess and Sunday's graduation party was perfect.. clear water, spotless deck, zero stress.",
   },
   {
     name: "Rick and Suzie A.",
@@ -22,7 +22,7 @@ export const testimonials = [
   {
     name: "Theo J.",
     location: "Manchester, NH",
-    quote: "Routine maintenance is predictable and honest—no surprise charges and they always explain what was done.",
+    quote: "Routine maintenance is predictable and honest.. no surprise charges and they always explain what was done.",
   },
   {
     name: "Rosa M.",
@@ -32,7 +32,7 @@ export const testimonials = [
   {
     name: "Michael and Seth G.",
     location: "Portsmouth, NH",
-    quote: "Every visit includes a full walkthrough and detailed notes—makes the ownership experience so much easier.",
+    quote: "Every visit includes a full walkthrough and detailed notes.. makes the ownership experience so much easier.",
   },
   {
     name: "Celia R.",

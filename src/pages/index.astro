@@ -1,5 +1,6 @@
 ﻿---
 import Base from "../layouts/Base.astro";
+import QuoteForm from "../components/QuoteForm.astro";
 import { site } from "../data/site";
 import { services } from "../data/services";
 import { testimonials } from "../data/testimonials";
@@ -170,66 +171,18 @@ const latestPosts = [...blogPosts].sort((a, b) => compareIsoDateDesc(a.date, b.d
     </div>
   </section>
 
-  <section id="contact" class="pt-6 pb-12">
+  <section id="get-quotes" class="pt-6 pb-12">
     <div class="container grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
       <div class="text-center">
-        <p class="text-sm font-medium uppercase tracking-[0.3em] text-ink/60 sm:text-lg">Get a Quote</p>
+        <p class="text-sm font-medium uppercase tracking-[0.3em] text-ink/60 sm:text-lg">Get Quotes</p>
         <p class="mt-0.5 text-sm text-ink/70">(no pressure!)</p>
-        {false && <h2 class="mt-6 font-display text-2xl sm:text-3xl">Tell us about your pool.</h2>}
+        <h2 class="mt-2 font-display text-2xl sm:text-3xl">Tell us about your pool.</h2>
         {false && <p class="mt-4 text-ink/70">
           customer service is our number one priority. We fill follow up with you shortly thereafter, you can also
           just email for general questions about taking care of your own pool. We love talking to people!
         </p>}
       </div>
-      <form class="rounded-3xl border border-sand bg-white p-6 shadow-lift">
-        <div class="grid gap-4 sm:grid-cols-2">
-          <label class="text-sm">
-            Full Name
-            <input
-              type="text"
-              name="name"
-              placeholder="Your name"
-              class="mt-2 w-full rounded-xl border border-ink/20 bg-white px-4 py-3 text-ink placeholder:text-ink/50"
-            />
-          </label>
-          <label class="text-sm">
-            Phone
-            <input
-              type="tel"
-              name="phone"
-              placeholder="(603) 555-0000"
-              class="mt-2 w-full rounded-xl border border-ink/20 bg-white px-4 py-3 text-ink placeholder:text-ink/50"
-            />
-          </label>
-        </div>
-        <label class="mt-4 block text-sm">
-          Email
-          <input
-            type="email"
-            name="email"
-            placeholder="you@email.com"
-            class="mt-2 w-full rounded-xl border border-ink/20 bg-white px-4 py-3 text-ink placeholder:text-ink/50"
-          />
-        </label>
-        <label class="mt-4 block text-sm">
-          How can we help?
-          <textarea
-            name="message"
-            rows={4}
-            placeholder="Weekly cleaning, repair, opening, or other details."
-            class="mt-2 w-full rounded-xl border border-ink/20 bg-white px-4 py-3 text-ink placeholder:text-ink/50"
-          ></textarea>
-        </label>
-        <button
-          type="submit"
-          class="mt-6 w-full rounded-full bg-sun px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-ink transition hover:bg-aqua"
-        >
-          Request a Quote
-        </button>
-        <p class="mt-3 text-xs text-ink/60">
-          This form is a placeholder. Connect it to Formspree, Web3Forms, or your CRM.
-        </p>
-      </form>
+      <QuoteForm showPanels={true} submitLabel="Free Quote" />
     </div>
   </section>
 </Base>
